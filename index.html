@@ -1,816 +1,962 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Steven Francis Reyes — Portfolio (Glass)</title>
+    <meta name="description" content="Versatile full‑stack engineer delivering e‑commerce, mobile, backend, cloud (AWS/GCP), and blockchain solutions end‑to‑end." />
+    <meta name="keywords" content="Software Engineer, Full-Stack, Android, Kotlin, Spring Boot, NestJs, ExpressJS, Flutter, AWS, GCP, Docker, Firebase, GitHub Actions, Shopify, Commercetools, Solidity, TypeScript" />
+    <meta name="author" content="Steven Francis Reyes" />
+    <link rel="canonical" href="https://steven0529.github.io/portfolio_glass.html" />
+    <meta property="og:title" content="Steven Francis Reyes — Software Engineer" />
+    <meta property="og:description" content="Versatile full‑stack engineer delivering e‑commerce, mobile, backend, cloud (AWS/GCP), and blockchain solutions end‑to‑end." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://steven0529.github.io/portfolio_glass.html" />
+    <meta property="og:image" content="https://steven0529.github.io/assets/img/about/profile.jpeg" />
+    <meta property="og:site_name" content="Steven Francis Reyes" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Steven Francis Reyes — Software Engineer" />
+    <meta name="twitter:description" content="Versatile full‑stack engineer delivering e‑commerce, mobile, backend, cloud (AWS/GCP), and blockchain solutions end‑to‑end." />
+    <meta name="twitter:image" content="https://steven0529.github.io/assets/img/about/profile.jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136985511-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-136985511-1');
+    </script>
+    <style>
+      :root {
+        --bg: #0a0b10;
+        --glass: rgba(255,255,255,0.06);
+        --border: rgba(255,255,255,0.08);
+        --text: #e6e8ee;
+        --muted: #9ea8b6;
+        --accent: #a78bfa; /* violet-400 */
+        --accent-2: #c4b5fd; /* violet-300 */
+        --shadow: 0 24px 64px rgba(0,0,0,0.55);
+        --radius: 16px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; min-height: 100vh; color: var(--text); font-family: "Inter", system-ui, -apple-system; background: radial-gradient(1600px 1000px at 50% -20%, rgba(167, 139, 250, 0.16), transparent 70%), radial-gradient(1800px 1200px at 50% 120%, rgba(0, 229, 255, 0.16), transparent 70%), var(--bg); background-attachment: fixed, fixed, scroll; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { color: var(--accent-2); }
+      .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description"
-    content="A software engineer with 5 years of experience and expertise on multiple tech stacks" />
-  <meta name="keywords"
-    content="Developer,Android Developer,iOS Developer,Programmer,Software Engineer,Programmer,Agile,SAFe 4,Google Certified">
+      /* Nav */
+      .header { position: sticky; top: 0; z-index: 50; background: rgba(10,11,16,0.5); backdrop-filter: blur(10px) saturate(130%); -webkit-backdrop-filter: blur(10px) saturate(130%); border-bottom: 1px solid var(--border); }
+      .nav { height: 64px; display: flex; align-items: center; justify-content: space-between; }
+      .brand { font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system; font-weight: 700; letter-spacing: .5px; }
+      .nav a { color: var(--text); margin-left: 16px; font-weight: 600; font-size: 14px; text-transform: uppercase; }
+      .header .container { position: relative; }
+      .nav-links { display: flex; align-items: center; }
+      .menu-toggle { display: none; width: 40px; height: 40px; margin-left: 10px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text); font-weight: 800; align-items: center; justify-content: center; }
+      .menu-toggle:hover { background: rgba(255,255,255,0.1); }
+      .mobile-nav { position: absolute; top: 64px; left: 0; right: 0; border-top: 1px solid var(--border); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; background: rgba(255,255,255,0.06); backdrop-filter: blur(12px) saturate(140%); -webkit-backdrop-filter: blur(12px) saturate(140%); overflow: hidden; max-height: 0; opacity: 0; transition: max-height .3s ease, opacity .25s ease; }
+      .mobile-nav.open { opacity: 1; }
+      .mobile-nav a { display: block; padding: 12px 16px; color: var(--text); border-top: 1px solid var(--border); text-transform: uppercase; font-weight: 700; font-size: 13px; }
+      .mobile-nav a:first-child { border-top: none; }
 
-  <title>Steven Francis Reyes - Personal Portfolio</title>
+      /* Hero */
+      .hero { padding: 110px 0 70px; display: grid; grid-template-columns: 1fr 3fr; gap: 32px; align-items: center; }
+      .title { font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system; font-size: 44px; line-height: 1.1; margin: 0 0 10px; }
+      .subtitle { color: var(--muted); font-size: 18px; margin: 0 0 14px; }
+      .glass { background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px) saturate(140%); -webkit-backdrop-filter: blur(12px) saturate(140%); }
+      .glass.card { transition: transform .2s ease, box-shadow .3s ease, background .3s ease, border-color .3s ease; }
+      .glass.card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.08); box-shadow: 0 18px 48px rgba(0,0,0,0.45); border-color: rgba(255,255,255,0.14); }
+      .hero-card { padding: 36px; order: 2; }
+      .avatar { width: 340px; height: 340px; border-radius: 50%; object-fit: cover; border: 8px solid var(--border); box-shadow: var(--shadow); }
+      .aside { display: grid; place-items: center; order: 1; }
+      .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; font-weight: 700; border-radius: 12px; border: 1px solid var(--border); background: rgba(0,0,0,0.2); color: var(--text); position: relative; overflow: hidden; transition: transform .15s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease; }
+      .btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 22%, transparent 44%); transform: translateX(-120%); transition: transform .45s ease; pointer-events: none; }
+      .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.2); }
+      .btn:hover::after { transform: translateX(120%); }
+      .btn.primary { color: #0b0d12; border-color: transparent; background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); }
+      .btn.primary:hover { filter: brightness(1.05); }
+      .chip { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); display: inline-block; margin: 6px 8px 0 0; font-size: 13px; }
+      /* Social links */
+      .social-links { display: flex; flex-wrap: wrap; gap: 12px; }
+      .social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text); font-weight: 700; }
+      .social-btn:hover { background: rgba(255,255,255,0.1); }
+      .icon-btn { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text); transition: background .2s ease, transform .1s ease, box-shadow .2s ease; }
+      .icon-btn:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+      .icon-btn svg { width: 20px; height: 20px; display: block; }
+      /* Theme toggle */
+      .theme-toggle { margin-left: 10px; }
+      [data-theme="light"] {
+        --bg: #f5f7fb;
+        --glass: rgba(255,255,255,0.85);
+        --border: rgba(2,6,23,0.08);
+        --text: #0f172a;
+        --muted: #475569;
+        --shadow: 0 18px 48px rgba(2,6,23,0.10);
+        --accent: #2563eb; /* blue-600 */
+        --accent-2: #60a5fa; /* blue-400 */
+      }
+      [data-theme="light"] body {
+        background: radial-gradient(800px 500px at 10% -10%, rgba(167,139,250,0.10), transparent 60%), radial-gradient(1000px 700px at 100% 10%, rgba(0,229,255,0.10), transparent 60%), var(--bg);
+      }
+      [data-theme="light"] .btn { background: rgba(0,0,0,0.06); border-color: var(--border); color: var(--text); }
+      [data-theme="light"] .tab-btn { background: rgba(0,0,0,0.06); }
+      [data-theme="light"] .chip { border-color: var(--border); background: rgba(0,0,0,0.06); color: var(--text); }
+      [data-theme="light"] .exp-toggle { background: rgba(0,0,0,0.04); }
+      /* Certifications */
+      .cert-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .cert-card { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.06); backdrop-filter: blur(12px) saturate(140%); -webkit-backdrop-filter: blur(12px) saturate(140%); transition: transform .2s ease, box-shadow .3s ease, background .3s ease, border-color .3s ease; }
+      .cert-card:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(0,0,0,0.45); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
+      .cert-icon { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); color: #0b0d12; }
+      .cert-icon svg { width: 22px; height: 22px; }
+      .cert-icon img { width: 22px; height: 22px; display: block; }
+      .cert-icon img[alt="AWS logo"] { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
+      .cert-body { display: grid; gap: 4px; }
+      .cert-title { font-weight: 700; }
+      .cert-meta { color: var(--muted); font-size: 13px; }
+      .pill { display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); font-size: 12px; color: var(--text); }
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <!-- Fonts -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
-  <!-- Icon -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons.css">
-  <!-- Slicknav -->
-  <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
-  <!-- Menu CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
-  <!-- Slider CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/slide-style.css">
-  <!-- Nivo Lightbox -->
-  <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
-  <!-- Animate -->
-  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-  <!-- Main Style -->
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <!-- Responsive Style -->
-  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-  <!-- Line Icons-->
-  <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
-  <!-- Tech Icons-->
-  <link rel="stylesheet"
-    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+      /* Sections */
+      .section { padding: 40px 0; position: relative; overflow: hidden; }
+      .section h2 { margin: 0 0 16px; font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system; position: relative; display: inline-block; }
+      .section h2:after { content: ""; display: block; width: 72px; height: 3px; margin-top: 10px; background: linear-gradient(135deg, var(--acc1, var(--accent)) 0%, var(--acc2, var(--accent-2)) 100%); border-radius: 2px; }
+      .section.accent-sky:before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(600px 200px at 90% 20%, rgba(34, 211, 238, 0.08), transparent 60%); }
+      .section.accent-emerald:before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(600px 220px at 10% 10%, rgba(52, 211, 153, 0.08), transparent 60%); }
+      .section.accent-amber:before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(600px 200px at 85% 10%, rgba(245, 158, 11, 0.08), transparent 60%); }
+      .section.accent-indigo:before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(600px 220px at 15% 20%, rgba(99, 102, 241, 0.08), transparent 60%); }
+      .section.accent-rose:before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(600px 200px at 80% 15%, rgba(244, 63, 94, 0.08), transparent 60%); }
+      .section.accent-violet:before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(600px 220px at 20% 10%, rgba(167, 139, 250, 0.08), transparent 60%); }
+      .section.accent-sky { --acc1: #22d3ee; --acc2: #67e8f9; }
+      .section.accent-emerald { --acc1: #34d399; --acc2: #6ee7b7; }
+      .section.accent-amber { --acc1: #f59e0b; --acc2: #fbbf24; }
+      .section.accent-indigo { --acc1: #6366f1; --acc2: #a5b4fc; }
+      .section.accent-rose { --acc1: #f43f5e; --acc2: #fb7185; }
+      .section.accent-violet { --acc1: var(--accent); --acc2: var(--accent-2); }
+      .grid { display: grid; gap: 24px; }
+      .cols-4 { grid-template-columns: repeat(4, 1fr); }
+      .span-full { grid-column: 1 / -1; }
+      .stack-col { display: grid; gap: 24px; height: 100%; grid-template-rows: auto 1fr; }
+      .stack-col .glass.card { height: auto; }
+      .cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 24px; }
+      .muted { color: var(--muted); }
+      .list { list-style: none; margin: 0; padding: 0; }
+      .list li { margin: 10px 0; }
+      .list.cols-2 { -webkit-columns: 2; -moz-columns: 2; columns: 2; column-gap: 24px; }
+      .list.cols-2 li { break-inside: avoid; }
+      .kv { display: grid; grid-template-columns: 140px 1fr; gap: 8px; }
+      /* Skill list icons */
+      #skills .list li { display: flex; align-items: center; gap: 10px; }
+      #skills .list li img.icon { width: 18px; height: 18px; display: block; }
+      #skills img.white-tint { filter: brightness(0) invert(1) contrast(105%) saturate(0); }
+      /* Global icon tinting for skills: white in dark mode, dark in light mode */
+      #skills img.icon { filter: brightness(0) invert(1) contrast(105%) saturate(0); }
+      [data-theme="light"] #skills img.icon { filter: brightness(0) contrast(110%) saturate(0); }
+      /* Tile layout for category view */
+      #skills .skills-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      #skills .skills-tiles li { display: grid; justify-items: center; align-items: start; gap: 8px; padding: 14px; border: none; border-radius: 12px; background: transparent; }
+      #skills .skills-tiles li:hover { background: transparent; }
+      #skills .skills-tiles li img.icon { width: 40px; height: 40px; }
+      #skills .skills-tiles li .skill-label { font-size: 13px; color: var(--text); text-align: center; }
+      #skills .skills-tiles li:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; max-width: 200px; }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136985511-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+      /* Timeline */
+      .timeline { list-style: none; padding: 0; margin: 0; position: relative; }
+      .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+      .t-item { position: relative; padding-left: 36px; margin-bottom: 14px; }
+      .t-item::before { content: ""; position: absolute; left: 3px; top: 6px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--accent); background: var(--bg); }
+      .when { font-size: 12px; color: var(--muted); }
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+      /* Projects — blog/case-study style cards */
+      .project { display: flex; flex-direction: column; height: 450px; border: 1px solid var(--border); border-radius: 16px; background: var(--glass); overflow: hidden; padding: 0; backdrop-filter: blur(12px) saturate(140%); -webkit-backdrop-filter: blur(12px) saturate(140%); transition: transform .2s ease, box-shadow .3s ease, background .3s ease, border-color .3s ease; position: relative; }
+      .project.glass:hover { transform: translateY(-4px); background: rgba(255,255,255,0.08); box-shadow: 0 18px 48px rgba(0,0,0,0.45); border-color: rgba(255,255,255,0.14); }
+      .project.glass:after { content: ""; position: absolute; top: 0; left: 0; height: 2px; width: 100%; background: linear-gradient(90deg, var(--acc1, var(--accent)), var(--acc2, var(--accent-2))); opacity: .8; border-top-left-radius: inherit; border-top-right-radius: inherit; }
+      .project .cover { position: relative; overflow: hidden; max-height: 200px; transition: max-height .35s ease, opacity .25s ease; }
+      .project .cover img { width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+      .project.expanded .cover { max-height: 0; opacity: 0; }
+      .project .content { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+      .project .meta { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+      .project h3 { margin: 0; font-size: 20px; line-height: 1.35; }
+      .project .excerpt { color: var(--muted); font-size: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+      .project.expanded .excerpt { display: block; -webkit-line-clamp: unset; overflow: visible; }
+      .project .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+      .project .see-more { margin-top: auto; align-self: flex-start; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text); font-weight: 700; font-size: 12px; letter-spacing: .3px; text-transform: uppercase; transition: transform .15s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease; }
+      .project .see-more:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.2); }
+      .project .readmore { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--accent); }
+      .project .readmore:hover { color: var(--accent-2); }
+      /* Projects arrows */
+      #projects .container { position: relative; }
+      .proj-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 56px; height: 56px; font-size: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.10); color: var(--text); z-index: 5; box-shadow: 0 10px 28px rgba(0,0,0,0.30); transition: transform .15s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease; }
+      .proj-nav:hover { transform: translateY(-50%) translateY(-1px); box-shadow: 0 16px 36px rgba(0,0,0,0.35); background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.24); }
+      .proj-nav.prev { left: -28px; }
+      .proj-nav.next { right: -28px; }
 
-    gtag('config', 'UA-136985511-1');
-  </script>
+      .footer { padding: 28px 0; color: var(--muted); text-align: center; border-top: 1px solid var(--border); }
 
-</head>
+      /* Skills switcher */
+      .skills-switch { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+      .tab-btn { padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text); font-weight: 700; font-size: 12px; letter-spacing: .3px; text-transform: uppercase; position: relative; overflow: hidden; transition: transform .15s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease; }
+      .tab-btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 22%, transparent 44%); transform: translateX(-120%); transition: transform .45s ease; pointer-events: none; }
+      .tab-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.2); }
+      .tab-btn:hover::after { transform: translateX(120%); }
+      .tab-btn.active { background: var(--glass); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
 
-<body>
+      .btn:focus-visible, .tab-btn:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+      .hidden { display: none; }
 
-  <!-- Header Area wrapper Starts -->
-  <header id="header-wrap">
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
-            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <span class="icon-menu"></span>
-            <span class="icon-menu"></span>
-            <span class="icon-menu"></span>
-          </button>
-          <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+      /* Proficiency bars */
+      .meter-row { display: grid; grid-template-columns: 160px 1fr 140px; align-items: center; gap: 12px; margin: 14px 0; }
+      .meter-label { color: var(--muted); font-size: 14px; display: inline-flex; align-items: center; gap: 8px; }
+      .meter-label .icon { width: 16px; height: 16px; display: inline-block; }
+      .meter { position: relative; height: 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); overflow: hidden; }
+      .meter::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(10% - 6px), rgba(255,255,255,0.08) calc(10% - 6px), rgba(255,255,255,0.08) 10%); }
+      .meter > span { display: block; height: 100%; background-image: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%); width: var(--w, 0%); transition: width .9s ease; }
+      #skills-bars .meter > span { width: 0; }
+      #skills-bars.meters-animate .meter > span { width: var(--w); }
+      .meter-badge { position: absolute; top: 0; left: 0; height: 100%; display: inline-flex; align-items: center; justify-content: center; transform: translate(-50%, -130%); padding: 2px 6px; font-size: 11px; font-weight: 800; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.10); color: var(--text); box-shadow: 0 6px 18px rgba(0,0,0,0.25); transition: left .9s ease; }
+      .meter-label[data-level]::after { display: none; content: none; }
+      .level-tag { justify-self: end; padding: 2px 8px; font-size: 11px; font-weight: 800; letter-spacing: .2px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text); white-space: nowrap; }
+      .meter-scale { display: grid; grid-template-columns: repeat(10, 1fr); margin-top: 6px; font-size: 10px; color: var(--muted); opacity: 0.85; grid-column: 2 / 3; }
+      .meter-scale span { text-align: center; }
+
+      /* Experience collapsible */
+      .exp-item { margin: 16px 0; }
+      .exp-toggle { width: 100%; text-align: left; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text); border-radius: 12px; padding: 14px 16px; cursor: pointer; display: grid; grid-template-columns: 1fr auto; align-items: center; transition: border-radius .2s ease, background .2s ease; }
+      .exp-toggle:hover { background: rgba(255,255,255,0.06); }
+      .exp-toggle[aria-expanded="true"] { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+      .exp-head h3 { margin: 0; font-size: 22px; line-height: 1.3; }
+      .exp-head h3 .role {
+        font-weight: 800;
+        background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .exp-head .company {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text);
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.06);
+      }
+      .exp-head .when {
+        font-size: 16px;
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 700;
+        margin-top: 10px;
+      }
+      .exp-blurb { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+      .exp-cta { width: 32px; height: 32px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); display: inline-flex; align-items: center; justify-content: center; color: var(--text); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+      .exp-cta:hover { background: rgba(255,255,255,0.1); }
+      .exp-cta .chev { transition: transform .2s ease; display: inline-block; transform: rotate(0deg); opacity: .9; font-size: 14px; }
+      .exp-toggle[aria-expanded="true"] .exp-cta .chev { transform: rotate(180deg); }
+      .exp-details { margin: 0; border: 1px solid var(--border); border-top: none; border-radius: 0 0 12px 12px; background: rgba(255,255,255,0.05); max-height: 0; overflow: hidden; opacity: 0; padding: 0 18px; transition: max-height .35s ease, opacity .25s ease, padding .25s ease; }
+      .exp-details.is-open { max-height: 1000px; opacity: 1; padding: 18px 18px 12px; }
+      .exp-details .list li { position: relative; padding-left: 16px; margin: 10px 0; color: var(--text); }
+      .exp-details .list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); box-shadow: 0 0 0 2px rgba(255,255,255,0.06); }
+
+      @media (max-width: 1200px) { .cols-4 { grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 1024px) { 
+        .cols-3 { grid-template-columns: repeat(2, 1fr); } 
+        .cols-4 { grid-template-columns: repeat(2, 1fr); }
+        .stack-col { height: auto; grid-template-rows: auto; }
+        .stack-col .glass.card { height: auto; }
+      }
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+        .avatar { width: 220px; height: 220px; }
+        .nav-links { display: none; }
+        .menu-toggle { display: inline-flex; }
+      }
+      @media (max-width: 640px) { .cols-4, .cols-3, .cols-2 { grid-template-columns: 1fr; } .project { grid-template-columns: 1fr; } .kv { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="header glass" id="top">
+      <div class="container nav">
+        <div class="brand">Steven Francis Reyes</div>
+        <nav class="nav-actions">
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#connect">Connect</a>
+            <button id="themeToggle" class="btn theme-toggle" type="button">Theme</button>
+          </div>
+          <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">☰</button>
+        </nav>
+      </div>
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#connect">Connect</a>
+      </div>
+    </header>
+
+    <section class="hero container">
+      <div class="hero-card glass">
+        <h1 class="title">Software Engineer</h1>
+        <p class="subtitle">Versatile full‑stack engineer delivering e‑commerce, mobile, backend, cloud (AWS/GCP), and blockchain solutions end‑to‑end.</p>
+        <div>
+          <span class="chip">Frontend</span>
+          <span class="chip">Backend</span>
+          <span class="chip">Mobile</span>
+          <span class="chip">Cloud Infrastructure</span>
+          <span class="chip">Blockchain</span>
         </div>
-        <div class="collapse navbar-collapse" id="main-navbar">
-          <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
-            <li class="nav-item active">
-              <a class="nav-link" href="#hero-area">
-                Home
+        <div class="actions">
+          <a class="btn primary" href="wp-content/stevenfrancisreyes_resume2025.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="mailto:stevenfrancisreyes@gmail.com?subject=Project%20Inquiry%20from%20Portfolio">Contact</a>
+        </div>
+      </div>
+      <div class="aside">
+        <img class="avatar" src="assets/img/about/profile.jpeg" alt="Steven Francis Reyes" />
+      </div>
+    </section>
+
+    <main>
+      <section id="about" class="section">
+        <div class="container grid cols-2">
+          <div class="glass card">
+            <h2>About</h2>
+            <p class="muted">I am a Lead Software Engineer with 9+ years of experience working on diverse projects and varied
+                tech stacks. I strive to develop and deliver high-quality software applications quickly and efficiently,
+                enabling clients to make a strong impact on their target market.</p>
+          </div>
+          <div class="glass card">
+            <h2>Details</h2>
+            <div class="kv">
+              <div class="muted">Name</div><div>Steven Francis V Reyes</div>
+              <div class="muted">Experience</div><div>9+ years</div>
+              <div class="muted">Location</div><div>Manila, Philippines</div>
+              <div class="muted">Email</div><div><a href="mailto:stevenfrancisreyes@gmail.com">stevenfrancisreyes@gmail.com</a></div>
+              <div class="muted">Phone</div><div><a href="tel:+639062746416">+63 906 274 6416</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="container">
+          <h2>Skills</h2>
+          <div class="skills-switch">
+            <button class="tab-btn active" data-view="skills-categories">Categories</button>
+            <button class="tab-btn" data-view="skills-bars">Proficiency</button>
+          </div>
+
+          <!-- View 1: Categories (default) -->
+          <div id="skills-categories">
+            <div class="grid cols-4">
+              <div class="glass card">
+                <h3>Programming</h3>
+                <ul class="list muted skills-tiles">
+                  <li><img class="icon white-tint" src="https://cdn-icons-png.flaticon.com/128/152/152760.png" alt="Java"/><span class="skill-label">Java</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/typescript/ffffff" alt="TypeScript"/><span class="skill-label">TypeScript</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/kotlin/ffffff" alt="Kotlin"/><span class="skill-label">Kotlin</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/python/ffffff" alt="Python"/><span class="skill-label">Python</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/gnubash/ffffff" alt="Bash"/><span class="skill-label">Bash</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/solidity/ffffff" alt="Solidity"/><span class="skill-label">Solidity</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/dart/ffffff" alt="Dart"/><span class="skill-label">Dart</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/swift/ffffff" alt="Swift"/><span class="skill-label">Swift</span></li>
+                </ul>
+              </div>
+              <div class="glass card">
+                <h3>Frameworks</h3>
+                <ul class="list muted skills-tiles">
+                  <li><img class="icon" src="https://cdn.simpleicons.org/android/ffffff" alt="Android"/><span class="skill-label">Android</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/spring/ffffff" alt="Spring"/><span class="skill-label">Spring Boot</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="NestJs"/><span class="skill-label">NextJs</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/express/ffffff" alt="ExpressJS"/><span class="skill-label">ExpressJS</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/flutter/ffffff" alt="Flutter"/><span class="skill-label">Flutter</span></li>
+                </ul>
+              </div>
+              <div class="glass card">
+                <h3>Cloud & Infra</h3>
+                <ul class="list muted skills-tiles">
+                  <li><img class="icon" src="https://cdn.simpleicons.org/googlecloud/ffffff" alt="GCP"/><span class="skill-label">GCP</span></li>
+                  <li><img class="icon white-tint" src="https://cdn.iconscout.com/icon/free/png-512/free-amazon-aws-3521268-2944772.png?f=webp&w=256" alt="AWS"/><span class="skill-label">AWS</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/docker/ffffff" alt="Docker"/><span class="skill-label">Docker</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/firebase/ffffff" alt="Firebase"/><span class="skill-label">Firebase</span></li>
+                  <li><img class="icon" src="https://cdn.simpleicons.org/githubactions/ffffff" alt="GitHub Actions"/><span class="skill-label">GitHub Actions</span></li>
+                </ul>
+              </div>
+              <div class="stack-col">
+                <div class="glass card">
+                  <h3>E‑Commerce</h3>
+                  <ul class="list muted skills-tiles">
+                    <li><img class="icon" src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify"/><span class="skill-label">Shopify</span></li>
+                    <li><img class="icon" src="https://cdn.simpleicons.org/sanity/ffffff" alt="Sanity"/><span class="skill-label">Sanity IO</span></li>
+                    <li><img class="icon white-tint" src="https://cdn.prod.website-files.com/637ca212d47966358b146792/65dc9e14ec9d65a401157050_Logo-commercetools-260x260-NoSpace.webp" alt="Commercetools"/><span class="skill-label">Commercetools</span></li>
+                  </ul>
+                </div>
+                <div class="glass card">
+                  <h3>Tools</h3>
+                  <ul class="list muted skills-tiles">
+                    <li><img class="icon" src="https://cdn.simpleicons.org/git/ffffff" alt="Git"/><span class="skill-label">Git</span></li>
+                    <li><img class="icon" src="https://cdn.simpleicons.org/jira/ffffff" alt="Jira"/><span class="skill-label">Jira</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- View 2: Proficiency bars -->
+          <div id="skills-bars" class="hidden">
+            <div class="glass card">
+              <div style="margin-bottom: 6px; font-weight: 700;">Programming</div>
+              <div class="meter-row"><div class="meter-label" data-level="Expert"><img class="icon white-tint" src="https://cdn-icons-png.flaticon.com/128/152/152760.png" alt="Java"/>Java</div><div class="meter" style="--w: 90%"><span></span></div><span class="level-tag">Expert</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Advanced"><img class="icon" src="https://cdn.simpleicons.org/typescript/ffffff" alt="TypeScript"/>TypeScript</div><div class="meter" style="--w: 80%"><span></span></div><span class="level-tag">Advanced</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Advanced"><img class="icon" src="https://cdn.simpleicons.org/kotlin/ffffff" alt="Kotlin"/>Kotlin</div><div class="meter" style="--w: 80%"><span></span></div><span class="level-tag">Advanced</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/python/ffffff" alt="Python"/>Python</div><div class="meter" style="--w: 75%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/gnubash/ffffff" alt="Bash"/>Bash</div><div class="meter" style="--w: 75%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Foundational"><img class="icon" src="https://cdn.simpleicons.org/solidity/ffffff" alt="Solidity"/>Solidity</div><div class="meter" style="--w: 60%"><span></span></div><span class="level-tag">Foundational</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Foundational"><img class="icon" src="https://cdn.simpleicons.org/dart/ffffff" alt="Dart"/>Dart</div><div class="meter" style="--w: 50%"><span></span></div><span class="level-tag">Foundational</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Foundational"><img class="icon" src="https://cdn.simpleicons.org/swift/ffffff" alt="Swift"/>Swift</div><div class="meter" style="--w: 50%"><span></span></div><span class="level-tag">Foundational</span></div>
+              <div style="margin: 14px 0 6px; font-weight: 700;">Frameworks</div>
+              <div class="meter-row"><div class="meter-label" data-level="Advanced"><img class="icon" src="https://cdn.simpleicons.org/android/ffffff" alt="Android"/>Android</div><div class="meter" style="--w: 85%"><span></span></div><span class="level-tag">Advanced</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Advanced"><img class="icon" src="https://cdn.simpleicons.org/spring/ffffff" alt="Spring"/>Spring Boot</div><div class="meter" style="--w: 80%"><span></span></div><span class="level-tag">Advanced</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="NextJs"/>NestJs</div><div class="meter" style="--w: 75%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Foundational"><img class="icon" src="https://cdn.simpleicons.org/express/ffffff" alt="ExpressJS"/>ExpressJS</div><div class="meter" style="--w: 60%"><span></span></div><span class="level-tag">Foundational</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Foundational"><img class="icon" src="https://cdn.simpleicons.org/flutter/ffffff" alt="Flutter"/>Flutter</div><div class="meter" style="--w: 50%"><span></span></div><span class="level-tag">Foundational</span></div>
+              <div style="margin: 14px 0 6px; font-weight: 700;">Cloud & Infrastructure</div>
+              <div class="meter-row"><div class="meter-label" data-level="Advanced"><img class="icon white-tint" src="https://cdn.iconscout.com/icon/free/png-512/free-amazon-aws-3521268-2944772.png?f=webp&w=256" alt="AWS"/>Amazon Web Services (AWS)</div><div class="meter" style="--w: 80%"><span></span></div><span class="level-tag">Advanced</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Foundational"><img class="icon" src="https://cdn.simpleicons.org/googlecloud/ffffff" alt="GCP"/>Google Cloud Platform (GCP)</div><div class="meter" style="--w: 60%"><span></span></div><span class="level-tag">Foundational</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/docker/ffffff" alt="Docker"/>Docker</div><div class="meter" style="--w: 70%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/firebase/ffffff" alt="Firebase"/>Firebase</div><div class="meter" style="--w: 70%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/githubactions/ffffff" alt="GitHub Actions"/>GitHub Actions</div><div class="meter" style="--w: 70%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div style="margin: 14px 0 6px; font-weight: 700;">Tools</div>
+              <div class="meter-row"><div class="meter-label" data-level="Expert"><img class="icon" src="https://cdn.simpleicons.org/git/ffffff" alt="Git"/>Git</div><div class="meter" style="--w: 90%"><span></span></div><span class="level-tag">Expert</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/jira/ffffff" alt="Jira"/>Jira</div><div class="meter" style="--w: 70%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div style="margin: 14px 0 6px; font-weight: 700;">E‑Commerce</div>
+              <div class="meter-row"><div class="meter-label" data-level="Advanced"><img class="icon" src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify"/>Shopify</div><div class="meter" style="--w: 80%"><span></span></div><span class="level-tag">Advanced</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon white-tint" src="https://cdn.prod.website-files.com/637ca212d47966358b146792/65dc9e14ec9d65a401157050_Logo-commercetools-260x260-NoSpace.webp" alt="Commercetools"/>Commercetools</div><div class="meter" style="--w: 65%"><span></span></div><span class="level-tag">Intermediate</span></div>
+              <div class="meter-row"><div class="meter-label" data-level="Intermediate"><img class="icon" src="https://cdn.simpleicons.org/sanity/ffffff" alt="Sanity"/>Sanity IO</div><div class="meter" style="--w: 75%"><span></span></div><span class="level-tag">Advanced</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="container">
+          <h2>Experience</h2>
+          <div class="glass card">
+            <div class="exp-item">
+              <button class="exp-toggle" aria-expanded="false">
+                <div class="exp-head">
+                  <h3><span class="role">Full-Stack Consultant</span> <span class="company">IONA</span></h3>
+                  <div class="when">March 2025 – Present</div>
+                  <div class="exp-blurb">Composable commerce consulting, integrations, and performance optimization.</div>
+                </div>
+                <span class="exp-cta"><span class="chev">▾</span></span>
+              </button>
+              <div class="exp-details">
+                <ul class="list">
+                  <li>Collaborated directly with multiple clients to set up and launch e‑commerce stores, ensuring smooth configuration and onboarding.</li>
+                  <li>Designed and architected composable commerce solutions, improving scalability, maintainability, and integration efficiency.</li>
+                  <li>Integrated third‑party services (payment gateways, inventory systems, analytics tools) to enhance functionality and user experience.</li>
+                  <li>Optimized store performance with SEO best practices and page‑speed improvements, increasing engagement and retention.</li>
+                  <li>Provided ongoing technical support and consultation, contributing to high client satisfaction and long‑term partnerships.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <button class="exp-toggle" aria-expanded="false">
+                <div class="exp-head">
+                  <h3><span class="role">Senior Software Engineer</span> <span class="company">Monstarlab Philippines</span></h3>
+                  <div class="when">October 2020 – March 2025</div>
+                  <div class="exp-blurb">Versatile full‑stack engineer across backend, frontend, Android, and blockchain.</div>
+                </div>
+                <span class="exp-cta"><span class="chev">▾</span></span>
+              </button>
+              <div class="exp-details">
+                <ul class="list">
+                  <li>Served as a versatile Full‑Stack Software Engineer: Backend (Spring), Frontend (NestJs with TypeScript), Native Android, and Blockchain (Fabric Hyperledger).</li>
+                  <li>Conducted training on coding standards and best practices to onboard new hires and ensure code quality.</li>
+                  <li>Built and maintained AWS and GCP infrastructures with documentation to ensure cost‑effectiveness and scalability.</li>
+                  <li>Created CI/CD pipelines using GitHub Actions to streamline builds and deployments for timely releases.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <button class="exp-toggle" aria-expanded="false">
+                <div class="exp-head">
+                  <h3><span class="role">Senior Software Engineer</span> <span class="company">LYKA</span></h3>
+                  <div class="when">January 2020 – October 2020</div>
+                  <div class="exp-blurb">Android team lead focused on delivery, cost optimization, and app performance.</div>
+                </div>
+                <span class="exp-cta"><span class="chev">▾</span></span>
+              </button>
+              <div class="exp-details">
+                <ul class="list">
+                  <li>Led a team of 5 Android developers to deliver features on time.</li>
+                  <li>Reduced infrastructure costs from $9,000 to $2,500 per month by optimizing API calls and implementing caching strategies.</li>
+                  <li>Reduced APK size from 150 MB to 50 MB by minifying resources and implementing on‑demand functionality.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <button class="exp-toggle" aria-expanded="false">
+                <div class="exp-head">
+                  <h3><span class="role">Lead Software Engineer</span> <span class="company">Stratpoint Global Outsourcing</span></h3>
+                  <div class="when">August 2015 – January 2020</div>
+                  <div class="exp-blurb">Leadership across Android capability, SWAT initiatives, and agile delivery.</div>
+                </div>
+                <span class="exp-cta"><span class="chev">▾</span></span>
+              </button>
+              <div class="exp-details">
+                <ul class="list">
+                  <li>Served as the Android Capability Head on the company’s Tech Council.</li>
+                  <li>Member of the SWAT team: built project foundations, stabilized troubled projects, and identified vulnerabilities.</li>
+                  <li>Collaborated with cross‑functional teams to develop mobile apps using Agile and SAFe for large programs.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <button class="exp-toggle" aria-expanded="false">
+                <div class="exp-head">
+                  <h3><span class="role">Software Engineer</span> <span class="company">Bittel Asia</span></h3>
+                  <div class="when">July 2014 – August 2015</div>
+                  <div class="exp-blurb">Android TV and IPTV development for hospitality.</div>
+                </div>
+                <span class="exp-cta"><span class="chev">▾</span></span>
+              </button>
+              <div class="exp-details">
+                <ul class="list">
+                  <li>Developed a RESTful IPTV system running on Android TV for a leading hotel in Myanmar.</li>
+                  <li>Solely developed a suite of Android applications for the IPTV system (VOD, Music, Flights, Weather, and more).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Projects</h2>
+          <button class="proj-nav prev" id="projPrev" aria-label="Previous projects" title="Previous">◀</button>
+          <button class="proj-nav next" id="projNext" aria-label="Next projects" title="Next">▶</button>
+          <div class="grid cols-2" id="projects-grid">
+
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/marina_showcase.png" alt="Retail Analytics" />
+              </div>
+              <div class="content">
+                <div class="meta">Government • Blockchain</div>
+                <h3>Government Digital Certification Platform</h3>
+              <div class="excerpt">Developed a large-scale digital certification and verification platform for a national government agency, capable of managing millions of records and supporting hundreds of thousands of authorized users. The system leverages blockchain technology to issue secure, tamper-proof certificates and fully replace manual processes with streamlined digital workflows. Contributed across the stack, including backend development, frontend implementation, complex database migrations, and blockchain integration, ensuring the platform’s high availability, security, and scalability.              </div>
+              <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">Spring Boot</span><span class="chip">Solidity</span><span class="chip">NextJs</span><span class="chip">AWS</span><span class="chip">Bash</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/lyka_showcase.png" alt="Retail Analytics" />
+              </div>
+              <div class="content">
+                <div class="meta">Digital Wallet • Social Media</div>
+                <h3>Social Media Super App</h3>
+              <div class="excerpt">Led a team of five Android developers in building and optimizing a social media platform for a startup, featuring digital currency rewards for user interactions, an integrated online marketplace, digital wallet, and real-time chat. Joined mid-project and implemented extensive code optimizations to significantly reduce APK size, improved API integrations, and cut serverless API costs from $9,000 to $2,500 through performance and resource usage optimizations.
+              </div>
+              <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">Android</span><span class="chip">Kotlin</span><span class="chip">Firebase</span><span class="chip">AWS</span>
+                </div>                
+              </div>
+            </div>
+
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/sharea-showcase.png" alt="Globe at Home" />
+              </div>
+              <div class="content">
+                <div class="meta">Mobile • Info-sharing</div>
+                <h3>Location-based Info Sharing Mobile Application</h3>
+                <div class="excerpt">Developed mobile and backend systems for an application featuring location-based content sharing, chat, and an AI-powered smart feed. Includes community spaces and a moderated news bulletin. Worked within a SAFe Agile train of eight cross-functional teams, applying Agile practices to deliver scalable, user-focused solutions.
+                </div>
+                <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">Android</span><span class="chip">Kotlin</span><span class="chip">Agile</span><span class="chip">SAFe</span><span class="chip">ExpressJS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/dwango_showcase.jpeg" alt="Streaming Platform" />
+              </div>
+              <div class="content">
+                <div class="meta">Cross-Platform Live Streaming Application</div>
+                <h3>Habit Tracker</h3>
+                <div class="excerpt">Developed a Dart-based application using the RTP streaming protocol to connect content creators with their audiences in real time. Designed for interactive live streaming with low latency, supporting both creators and viewers across platforms, and enabling features such as live engagement and audience interaction tools.
+                </div>
+                <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">Flutter</span><span class="chip">Dart</span> <span class="chip">Cross-Platform</span> 
+                </div>
+              </div>
+            </div>
+
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/gah_showcase.png" alt="Globe at Home" />
+              </div>
+              <div class="content">
+                <div class="meta">Android • Telecom</div>
+                <h3>Broadband Companion App</h3>
+                <div class="excerpt">Led the Android tribe in rebuilding a broadband companion app to enhance account management, usage insights, and user onboarding. Delivered significant performance and stability improvements, enabling the brand to scale to millions of users. Operated within a SAFe Agile train of six cross-functional teams, driving sprint planning, backlog grooming, retrospectives, and feature planning. Oversaw app release management and uploads to Google Play Store.
+                </div>
+                <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">Android</span><span class="chip">Kotlin</span><span class="chip">Agile</span><span class="chip">SAFe</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/parian_showcase.png" alt="Parian Kiosk" />
+              </div>
+              <div class="content">
+                <div class="meta">Retail • Kiosk</div>
+                <h3>Restaurant Kiosk Application</h3>
+                <div class="excerpt">Built a self-service ordering kiosk integrated with a central server for product listings, pricing, and payment gateway connectivity. Deployed across multiple restaurants in the US. Part of a three-developer team responsible for the entire system, from development to deployment.
+                </div>
+                <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">Android</span><span class="chip">Kiosk</span><span class="chip">Java</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/petzam_showcase.png" alt="Petzam" />
+              </div>
+              <div class="content">
+                <div class="meta">Consumer • Health</div>
+                <h3>Veterinary Teleconsultation Application</h3>
+                <div class="excerpt">Developed a location-based platform for finding and scheduling video consultations with veterinarians, featuring chat, appointment reminders, and medical history management. Part of the team of 2 developers working closely with the client to design, build, and deliver the entire application.
+                </div>
+                <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">Tello</span><span class="chip">Java</span><span class="chip">Android</span><span class="chip">iOS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project glass">
+              <div class="cover">
+                <img src="assets/img/gallery/locapp_showcase.png" alt="LocApp / Store Locator" />
+              </div>
+              <div class="content">
+                <div class="meta">Maps • Search</div>
+                <h3>Store Locator App</h3>
+                <div class="excerpt">Built a location-based store finder for a major national retailer, allowing users to locate the brand’s stores as well as competitor locations without their products. Provided insights for market penetration strategies. Implemented using GraphQL, serverless architecture, AWS services, and REST API integrations.
+                </div>
+                <button class="see-more" type="button">See more</button>
+                <div class="tags">
+                  <span class="chip">GraphQL</span><span class="chip">Maps SDK</span><span class="chip">Serverless</span><span class="chip">Android</span>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+          
+        </div>
+      </section>
+
+      <section id="certifications" class="section">
+        <div class="container">
+          <h2>Certifications</h2>
+          <div class="cert-grid">
+            <div class="cert-card">
+              <span class="cert-icon" aria-hidden="true">
+                <img src="https://cdn.simpleicons.org/sanity/0b0d12" alt="Sanity logo" />
+              </span>
+              <div class="cert-body">
+                <div class="cert-title">Sanity Certified Developer</div>
+                <div class="cert-meta">Sanity.io</div>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon" aria-hidden="true">
+                <img src="https://simpleicons.org/icons/w3schools.svg" alt="W3Schools logo" />              </span>
+              <div class="cert-body">
+                <div class="cert-title">Web Accessibility Certification</div>
+                <div class="cert-meta">Accessibility</div>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon" aria-hidden="true">
+                <img src="https://images.icon-icons.com/2407/PNG/512/aws_icon_146074.png" alt="AWS logo" />
+              </span>
+              <div class="cert-body">
+                <div class="cert-title">AWS Certified Practitioner</div>
+                <div class="cert-meta">Amazon Web Services</div>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon" aria-hidden="true">
+                <img src="https://cdn.simpleicons.org/android/0b0d12" alt="Android logo" />
+              </span>
+              <div class="cert-body">
+                <div class="cert-title">Associate Android Developer</div>
+                <div class="cert-meta">Google Developer Certification</div>
+                <span class="pill">ID 12109090</span>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon" aria-hidden="true">
+                <img src="https://cdn.simpleicons.org/scaledagile/0b0d12" alt="SAFe logo" onerror="this.replaceWith((function(){var s=document.createElement('span');s.textContent='SAFe';s.style.fontWeight='800';return s;})())" />
+              </span>
+              <div class="cert-body">
+                <div class="cert-title">Certified SAFe Practitioner</div>
+                <div class="cert-meta">Scaled Agile (SAFe)</div>
+                <span class="pill">License 41726680-5897</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="connect" class="section">
+        <div class="container">
+          <h2>Connect</h2>
+          <div class="glass card">
+            <div class="social-links">
+              <a class="icon-btn" href="mailto:stevenfrancisreyes@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">
-                About
+              <a class="icon-btn" href="https://www.linkedin.com/in/sfreyes" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.5-2.7 5.2-2.7C21.4 7.5 24 9.8 24 14.3V24h-5v-8.5c0-2-0.1-4.5-2.8-4.5-2.8 0-3.2 2.1-3.2 4.3V24h-5V8z"/></svg>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">
-                Services
+              <a class="icon-btn" href="https://github.com/steven0529" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.77 5.46.77 11.73c0 4.92 3.19 9.1 7.62 10.58.56.1.77-.24.77-.54v-1.9c-3.1.67-3.76-1.33-3.76-1.33-.51-1.32-1.24-1.67-1.24-1.67-1.02-.7.08-.69.08-.69 1.12.08 1.72 1.15 1.72 1.15 1 .1.68 1.9 2.67 1.9 1.34 0 1.9-.1 2.2-.2.08-.73.4-1.23.72-1.52-2.48-.28-5.1-1.24-5.1-5.54 0-1.23.44-2.23 1.15-3.02-.12-.29-.5-1.46.1-3.05 0 0 .94-.3 3.1 1.15.89-.24 1.84-.36 2.78-.36.94 0 1.89.12 2.78.36 2.17-1.45 3.1-1.15 3.1-1.15.6 1.59.22 2.76.1 3.05.72.79 1.15 1.79 1.15 3.02 0 4.3-2.63 5.25-5.13 5.53.41.35.77 1.04.77 2.1v3.12c0 .3.21.65.78.54 4.42-1.48 7.6-5.66 7.6-10.58C23.23 5.46 18.27.5 12 .5z"/></svg>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#resume">
-                Resume
+              <a class="icon-btn" href="https://www.facebook.com/stevenfrancis.reyes" target="_blank" rel="noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.87 6.48 1.87 12.07c0 4.98 3.63 9.11 8.38 9.93v-7.02H7.9V12.1h2.35V9.8c0-2.32 1.38-3.6 3.5-3.6.99 0 2.02.18 2.02.18v2.22h-1.14c-1.12 0-1.47.7-1.47 1.42v2.08h2.5l-.4 2.88h-2.1V22c4.75-.82 8.38-4.95 8.38-9.93z"/></svg>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolios">
-                Work
+              <a class="icon-btn" href="https://www.instagram.com/sfreyes_?igsh=ZHZ3OG5ia2MxamZi&utm_source=qr" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm6.25-.75a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18.25 6.75z"/></svg>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">
-                Contact
+              <a class="icon-btn" href="https://stackoverflow.com/users/2873772/steven0529" target="_blank" rel="noreferrer" aria-label="Stack Overflow">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 19.6v-4.2h1.8V22H4.6v-6.6h1.8v4.2h11.2zM7 17.2h8.8v-1.8H7v1.8zm.2-3.6l8.6 1.2.25-1.77-8.6-1.2-.25 1.77zM8.3 9l7.8 3.2.7-1.67-7.8-3.2L8.3 9zm2.3-3.5l6.7 4.8 1-1.5-6.7-4.8-1 1.5zM15.9 1l-1.4 1.1 5.3 7.2 1.5-1.1L15.9 1z"/></svg>
               </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Mobile Menu Start -->
-      <ul class="onepage-nev mobile-menu">
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">about</a>
-        </li>
-        <li>
-          <a href="#services">Services</a>
-        </li>
-        <li>
-          <a href="#resume">resume</a>
-        </li>
-        <li>
-          <a href="#portfolio">Work</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-      <!-- Mobile Menu End -->
-    </nav>
-    <!-- Navbar End -->
-
-    <!-- Hero Area Start -->
-    <div id="hero-area" class="hero-area-bg">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 text-center">
-            <div class="contents">
-              <h5 class="wow fadeInUp" data-wow-delay="0.2s">Hi! I'm</h5>
-              <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Steven Francis Reyes</h2>
-              <p class="wow fadeInUp" data-wow-delay="0.6s">Mobile Developer / Software Engineer</p>
-              <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
-                <li>
-                  <a class="facebook" href="https://www.facebook.com/stevenfrancis.reyes"><i
-                      class="icon-social-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="github" href="https://github.com/steven0529"><i class="icon-social-github"></i></a>
-                </li>
-                <li>
-                  <a class="stackexchange" href="https://stackoverflow.com/users/2873772/steven0529"><i
-                      class="lni-stackoverflow"></i></a>
-                </li>
-                <li>
-                  <a class="linkedin" href="https://www.linkedin.com/in/steven-francis-reyes-58a92790/"><i
-                      class="icon-social-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="google" href="https://plus.google.com/u/0/114494024657980843354"><i
-                      class="icon-social-google"></i></a>
-                </li>
-              </ul>
-              <!-- <div class="header-button wow fadeInUp" data-wow-delay="1s">
-                <a href="#" class="btn btn-common">Get a Free Quote</a>
-              </div> -->
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- Hero Area End -->
+      </section>
+    </main>
 
-  </header>
-  <!-- Header Area wrapper End -->
+    <footer class="footer">
+      <div class="container">© <span id="y"></span> Steven Francis Reyes. All rights reserved.</div>
+      <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+        (function(){
+          var tabs = document.querySelectorAll('.tab-btn');
+          var views = ['skills-categories','skills-chips','skills-bars'];
+          function show(view){
+            views.forEach(function(id){
+              var el = document.getElementById(id);
+              if(!el) return;
+              if(id === view) el.classList.remove('hidden'); else el.classList.add('hidden');
+            });
+            tabs.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-view') === view); });
+          }
+          tabs.forEach(function(btn){
+            btn.addEventListener('click', function(){ 
+              var view = btn.getAttribute('data-view');
+              show(view); 
+              if(view === 'skills-bars') triggerMeters();
+            });
+          });
+          // Theme toggle
+          var toggleBtn = document.getElementById('themeToggle');
+          var root = document.documentElement;
+          function setThemeLabel(){
+            var isLight = root.getAttribute('data-theme') === 'light';
+            if(!toggleBtn) return;
+            toggleBtn.textContent = isLight ? 'Dark' : 'Light';
+            toggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+          }
+          var saved = localStorage.getItem('theme');
+          if(saved === 'light'){ root.setAttribute('data-theme','light'); }
+          setThemeLabel();
+          toggleBtn && toggleBtn.addEventListener('click', function(){
+            var isLight = root.getAttribute('data-theme') === 'light';
+            if(isLight){ root.removeAttribute('data-theme'); localStorage.removeItem('theme'); }
+            else { root.setAttribute('data-theme','light'); localStorage.setItem('theme','light'); }
+            setThemeLabel();
+          });
+          // Mobile nav
+          var menuToggle = document.getElementById('menuToggle');
+          var mobileNav = document.getElementById('mobileNav');
+          if(menuToggle && mobileNav){
+            menuToggle.addEventListener('click', function(){
+              var open = menuToggle.getAttribute('aria-expanded') === 'true';
+              menuToggle.setAttribute('aria-expanded', String(!open));
+              if(!open){
+                mobileNav.hidden = false;
+                mobileNav.classList.add('open');
+                mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px';
+                mobileNav.addEventListener('transitionend', function onEnd(e){
+                  if(e.propertyName !== 'max-height') return;
+                  mobileNav.style.maxHeight = 'none';
+                  mobileNav.removeEventListener('transitionend', onEnd);
+                });
+              } else {
+                mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px';
+                void mobileNav.offsetHeight;
+                mobileNav.style.maxHeight = '0px';
+                mobileNav.addEventListener('transitionend', function onClose(e){
+                  if(e.propertyName !== 'max-height') return;
+                  mobileNav.hidden = true;
+                  mobileNav.classList.remove('open');
+                  mobileNav.style.maxHeight = '';
+                  mobileNav.removeEventListener('transitionend', onClose);
+                });
+              }
+            });
+            mobileNav.addEventListener('click', function(e){
+              if(e.target.tagName.toLowerCase() === 'a'){
+                menuToggle.click();
+              }
+            });
+          }
+          // Experience collapsibles with dynamic height
+          var toggles = document.querySelectorAll('.exp-toggle');
+          toggles.forEach(function(t){
+            var details = t.parentElement.querySelector('.exp-details');
+            t.addEventListener('click', function(){
+              var expanded = t.getAttribute('aria-expanded') === 'true';
+              t.setAttribute('aria-expanded', String(!expanded));
+              if(!details) return;
+              if(!expanded){
+                details.classList.add('is-open');
+                details.style.maxHeight = details.scrollHeight + 'px';
+                var onOpenEnd = function(e){
+                  if(e.propertyName !== 'max-height') return;
+                  details.style.maxHeight = 'none';
+                  details.removeEventListener('transitionend', onOpenEnd);
+                };
+                details.addEventListener('transitionend', onOpenEnd);
+              } else {
+                if(getComputedStyle(details).maxHeight === 'none'){
+                  details.style.maxHeight = details.scrollHeight + 'px';
+                }
+                void details.offsetHeight;
+                details.style.maxHeight = '0px';
+                var onCloseEnd = function(e){
+                  if(e.propertyName !== 'max-height') return;
+                  details.classList.remove('is-open');
+                  details.style.maxHeight = '';
+                  details.removeEventListener('transitionend', onCloseEnd);
+                };
+                details.addEventListener('transitionend', onCloseEnd);
+              }
+            });
+          });
 
-  <!-- About Section Start -->
-  <section id="about" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-            <img class="img-fluid" src="assets/img/about/profile.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
-            <p>
-              I am Steven Francis Reyes, I am Lead Software Engineer with 5 years of experience architecting and
-              building high-quality mobile applications both for consumer and enterprise. I have a well-rounded
-              knowledge of developing end-to-end software systems with specialization on mobile development.
-              <br /><br />
-              I believe teamwork is always the key, working in Agile Scrum teams to continuously deliver a shippable
-              customer-focused product in the shortest time possible is my forte.
-              <br /><br />
-              As a technology enthusiast, I enjoy learning new tech-related stuff and as a seasoned traveler, I like to
-              explore new places as well.
-              <br /><br />
-              And if ever you want to build the "next big thing”, contact me, I’m more than willing to help you.
-            </p>
-            <div class="about-profile">
-              <ul class="admin-profile">
-                <li><span class="pro-title"> Name </span> <span class="pro-detail">Steven Francis Reyes</span></li>
-                <li><span class="pro-title"> Age </span> <span class="pro-detail">26 Years</span></li>
-                <li><span class="pro-title"> Experience </span> <span class="pro-detail">5 Years</span></li>
-                <li><span class="pro-title"> Location </span> <span class="pro-detail">Manila, Philippines</span></li>
-                <li><span class="pro-title"> e-mail </span> <span class="pro-detail">stevenfrancisreyes@gmail.com</span>
-                </li>
-                <li><span class="pro-title"> Phone </span> <span class="pro-detail">+ (63) 906 274 6416</span></li>
-                <li><span class="pro-title"> Freelance </span> <span class="pro-detail">Available</span></li>
-              </ul>
-            </div>
-            <a href="wp-content/resume_steven_reyes_2019.pdf" class="btn btn-common"><i class="icon-paper-clip"></i>
-              Download Resume</a>
-            <a href="mailto:stevenfrancisreyes@gmail.com" class="btn btn-danger"><i class="icon-speech"></i> Contact
-              Me</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About Section End -->
+          // Proficiency meters: animate on reveal and position badges
+          function triggerMeters(){
+            var wrap = document.getElementById('skills-bars');
+            if(!wrap) return;
+            // Start animation state
+            wrap.classList.remove('meters-animate');
+            void wrap.offsetHeight;
+            wrap.classList.add('meters-animate');
+            // Position badges at end of fill
+            var rows = wrap.querySelectorAll('.meter-row');
+            rows.forEach(function(row){
+              var meter = row.querySelector('.meter');
+              var bar = meter && meter.querySelector('span');
+              var badge = meter && meter.querySelector('.meter-badge');
+              if(!meter || !bar || !badge) return;
+              var w = getComputedStyle(meter).getPropertyValue('--w').trim();
+              if(!w) w = '0%';
+              // after a frame so width transition begins
+              requestAnimationFrame(function(){
+                // Move badge to percentage position, clamped to meter width
+                var pct = parseFloat(w);
+                if(isNaN(pct)) pct = 0;
+                badge.style.left = Math.max(8, Math.min(100, pct)) + '%';
+              });
+            });
+          }
+          // If proficiency is initially visible, animate on load
+          if(!document.getElementById('skills-bars').classList.contains('hidden')){
+            triggerMeters();
+          }
 
-  <!-- Services Section Start -->
-  <section id="services" class="services section-padding">
-    <h2 class="section-title wow flipInX" data-wow-delay="0.4s">What I do</h2>
-    <div class="container">
-      <div class="row">
-        <!-- Services item -->
-        <div class="col-md-6 col-lg-4 col-xs-12">
-          <div class="services-item wow fadeInDown" data-wow-delay="0.3s">
-            <div class="icon">
-              <i class="icon-screen-smartphone"></i>
-            </div>
-            <div class="services-content">
-              <h3><a href="#">Mobile Applications</a></h3>
-              <p>Android, iOS, cross-platform/hybrid, you name it</p>
-            </div>
-          </div>
-        </div>
-        <!-- Services item -->
-        <div class="col-md-6 col-lg-4 col-xs-12">
-          <div class="services-item wow fadeInDown" data-wow-delay="0.6s">
-            <div class="icon">
-              <i class="icon-speedometer"></i>
-            </div>
-            <div class="services-content">
-              <h3><a href="#">Agile Development</a></h3>
-              <p>Deliver fast and customer-focused products</p>
-            </div>
-          </div>
-        </div>
-        <!-- Services item -->
-        <div class="col-md-6 col-lg-4 col-xs-12">
-          <div class="services-item wow fadeInDown" data-wow-delay="1.2s">
-            <div class="icon">
-              <i class="icon-bubbles"></i>
-            </div>
-            <div class="services-content">
-              <h3><a href="#">Consultancy</a></h3>
-              <p>Expert advice from a software engineer</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Services Section End -->
+          // Projects carousel: 4 per view, circular via arrows
+          (function(){
+            var grid = document.getElementById('projects-grid');
+            var prev = document.getElementById('projPrev');
+            var next = document.getElementById('projNext');
+            if(!grid || !prev || !next) return;
+            var items = Array.prototype.slice.call(grid.querySelectorAll('.project'));
+            var perView = 4;
+            var index = 0;
+            function render(){
+              items.forEach(function(it){ it.style.display = 'none'; });
+              for(var i=0;i<perView;i++){
+                var j = (index + i) % items.length;
+                items[j].style.display = '';
+              }
+            }
+            prev.addEventListener('click', function(){
+              index = (index - perView + items.length) % items.length;
+              render();
+            });
+            next.addEventListener('click', function(){
+              index = (index + perView) % items.length;
+              render();
+            });
+            render();
+          })();
 
-  <!-- Resume Section Start -->
-  <div id="resume" class="section-padding">
-    <div class="container">
-      <div class="row">
-
-        <!-- Experience -->
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="experience wow fadeInRight" data-wow-delay="0.6s">
-            <ul class="timeline">
-              <li>
-                <i class="icon-briefcase"></i>
-                <h2 class="timelin-title">Experience</h2>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Lead Software Engineer - Stratpoint Global Outsourcing</h3>
-                  <span>May 2018 - Present</span>
-                  <p class="line-text"></p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Senior Software Engineer - Stratpoint Global Outsourcing</h3>
-                  <span>May 2017 - May 2018</span>
-                  <p class="line-text"></p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Software Engineer - Stratpoint Global Outsourcing</h3>
-                  <span>Aug 2015 - May 2017</span>
-                  <p class="line-text"></p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Android Developer - Bittel Asia</h3>
-                  <span>April 2014 - Aug 2015</span>
-                  <p class="line-text"></p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Trainings and Conventions -->
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="experience wow fadeInRight" data-wow-delay="0.6s">
-            <ul class="timeline">
-              <li>
-                <i class="lni-blackboard"></i>
-                <h2 class="timelin-title">Trainings and Conventions attended</h2>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">SAFe for Teams Training</h3>
-                  <span>Nov 2-3, 2018</span>
-                  <p class="line-text">Globe University, 5F, Globe Telecom Plaza 1, Mandaluyong city</p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Soft Con 2018</h3>
-                  <span>Oct 23, 2018</span>
-                  <p class="line-text">Shangri-La Hotel, At the Fort, BGC, Taguig city</p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Coaching and Counseling Skills for Leaders</h3>
-                  <span>Feb 24, 2018</span>
-                  <p class="line-text">Stratpoint Technologies Inc, 6F Globe Telecom Plaza 1, Mandaluyong city</p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Android Developer - Bittel Asia</h3>
-                  <span>Jan 15, 2018</span>
-                  <p class="line-text">Stratpoint Technologies Inc, 6F Globe Telecom Plaza 1, Mandaluyong city</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Certifications -->
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="education wow fadeInRight" data-wow-delay="0.3s">
-            <ul class="timeline">
-              <li>
-                <i class="icon-badge"></i>
-                <h2 class="timelin-title">Certifications</h2>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Associate Android Developer
-                  </h3>
-                  <span>Nov 2018 - 2021</span>
-                  <p class="line-text"><a href="https://www.credential.net/ldqh1r7b">License 12109090</a></p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Certified SAFe Practitioner</h3>
-                  <span>Dec 2018 - Dec 2019</span>
-                  <p class="line-text"><a
-                      href="https://www.youracclaim.com/badges/2613803f-3c1f-4d88-a973-c7648c61462f/linked_in_profile">License
-                      41726680-5897</a></p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="experience wow fadeInRight" data-wow-delay="0.6s">
-            <ul class="timeline">
-              <li>
-                <i class="icon-graduation"></i>
-                <h2 class="timelin-title">Education</h2>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Bachelor of Science in Software Engineering</h3>
-                  <span>2009 - 2014</span>
-                  <p class="line-text">Central Philippine University, Iloilo city</p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">Secondary Education</h3>
-                  <span>2005 - 2009</span>
-                  <p class="line-text">Colegio de las Hijas de Jesus, Iloilo city</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <!-- Resume Section End -->
-
-  <!-- My Capabilities -->
-  <section class="counter-section section-padding">
-    <h2 class="section-title wow flipInX" data-wow-delay="0.3s">My Capabilities</h2>
-    <div class="container">
-      <div class="row">
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="0.3s">
-            <div class="icon"><i class="devicon-android-plain"></i></div>
-            <p>Android</p>
-          </div>
-        </div>
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="0.6s">
-            <div class="icon"><i class="devicon-swift-plain"></i></div>
-            <p>iOS Swift</p>
-          </div>
-        </div>
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="1.2s">
-            <div class="icon"><i class="devicon-nodejs-plain colored"></i></div>
-            <p>NodeJs</p>
-          </div>
-        </div>
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="1.2s">
-            <div class="icon"><i class="devicon-react-original"></i></div>
-            <p>React Native</p>
-          </div>
-        </div>
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="0.9s">
-            <div class="icon"><i class="lni-git"></i></div>
-            <p>Git</p>
-          </div>
-        </div>
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="1.2s">
-            <div class="icon"><i class="devicon-linux-plain"></i></div>
-            <p>Linux</p>
-          </div>
-        </div>
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="1.2s">
-            <div class="icon"><i class="devicon-amazonwebservices-original"></i></div>
-            <p>AWS</p>
-          </div>
-        </div>
-        <!-- Counter Item -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="1.2s">
-            <div class="icon"><i class="devicon-mysql-plain"></i></div>
-            <p>MySQL</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- My Capabilities End-->
-
-  <!-- Portfolio Section -->
-  <section id="portfolios" class="section-padding">
-    <!-- Container Starts -->
-    <div class="container">
-      <h2 class="section-title wow flipInX" data-wow-delay="0.4s">My Works</h2>
-      <div class="row">
-        <div class="col-md-12">
-          <!-- Portfolio Controller/Buttons -->
-          <div class="controls text-center">
-            <a class="filter active btn btn-common" data-filter="all">
-              All
-            </a>
-            <a class="filter btn btn-common" data-filter=".professional">
-              Professional
-            </a>
-            <a class="filter btn btn-common" data-filter=".personal">
-              Personal
-            </a>
-          </div>
-          <!-- Portfolio Controller/Buttons Ends-->
-        </div>
-
-        <!-- Portfolio Recent Projects -->
-        <div id="portfolio" class="row wow fadeInDown" data-wow-delay="0.4s">
-          <!-- Parian -->
-          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mix personal">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <img src="assets/img/gallery/parian_showcase.png" alt="" />
-                <div class="overlay">
-                  <div class="icons">
-                    <a class="lightbox preview" href="assets/img/gallery/parian_showcase.png">
-                      <i class="icon-eye"></i>
-                    </a>
-                    <a class="link" href="https://www.forkby.com/parian_products/2">
-                      <i class="icon-link"></i>
-                    </a>
-                  </div>
-                </div>
-                <h2 style="text-align:center;">Parian Kiosk</h2>
-                <br />
-              </div>
-            </div>
-          </div>
-          <!-- Petzam -->
-          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mix personal">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <img src="assets/img/gallery/petzam_showcase.png" alt="" />
-                <div class="overlay">
-                  <div class="icons">
-                    <a class="lightbox preview" href="assets/img/gallery/petzam_showcase.png">
-                      <i class="icon-eye"></i>
-                    </a>
-                    <a class="link" href="https://play.google.com/store/apps/details?id=com.petzam.petzam">
-                      <i class="icon-link"></i>
-                    </a>
-                  </div>
-                </div>
-                <h2 style="text-align:center;">Petzam</h2>
-                <br />
-              </div>
-            </div>
-          </div>
-          <!-- Globe at Home -->
-          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mix professional">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <img src="assets/img/gallery/gah_showcase.png" alt="" />
-                <div class="overlay">
-                  <div class="icons">
-                    <a class="lightbox preview" href="assets/img/gallery/gah_showcase.png">
-                      <i class="icon-eye"></i>
-                    </a>
-                    <a class="link" href="https://play.google.com/store/apps/details?id=ph.com.globe.globeathome">
-                      <i class="icon-link"></i>
-                    </a>
-                  </div>
-                </div>
-                <h2 style="text-align:center;">Globe at Home</h2>
-                <br />
-              </div>
-            </div>
-          </div>
-          <!-- LocApp -->
-          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mix professional">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <img src="assets/img/gallery/locapp_showcase.png" alt="" />
-                <div class="overlay">
-                  <div class="icons">
-                    <a class="lightbox preview" href="assets/img/gallery/locapp_showcase.png">
-                      <i class="icon-eye"></i>
-                    </a>
-                    <a class="link" href="#">
-                      <i class="icon-link"></i>
-                    </a>
-                  </div>
-                </div>
-                <h2 style="text-align:center;">LocApp/Store Locator</h2>
-                <br />
-              </div>
-            </div>
-          </div>
-          <!-- Habit -->
-          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mix professional">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <img src="assets/img/gallery/habit_showcase.png" alt="" />
-                <div class="overlay">
-                  <div class="icons">
-                    <a class="lightbox preview" href="assets/img/gallery/habit_showcase.png">
-                      <i class="icon-eye"></i>
-                    </a>
-                    <a class="link" href="#">
-                      <i class="icon-link"></i>
-                    </a>
-                  </div>
-                </div>
-                <h2 style="text-align:center;">HaBit/Stratpoint Token</h2>
-                <br />
-              </div>
-            </div>
-          </div>
-          <!-- Cutiefy -->
-          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mix personal">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <img src="assets/img/gallery/cutiefy_showcase.png" alt="" />
-                <div class="overlay">
-                  <div class="icons">
-                    <a class="lightbox preview" href="assets/img/gallery/cutiefy_showcase.png">
-                      <i class="icon-eye"></i>
-                    </a>
-                    <a class="link" href="#">
-                      <i class="icon-link"></i>
-                    </a>
-                  </div>
-                </div>
-                <h2 style="text-align:center;">Cutiefy</h2>
-                <br />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Container Ends -->
-  </section>
-  <!-- Portfolio Section Ends -->
-
-  <!-- Counter Area Start-->
-  <!-- <section class="counter-section section-padding">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="0.3s">
-            <div class="icon"><i class="icon-briefcase"></i></div>
-            <div class="counterUp">3</div>
-            <p>Project Working</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="0.6s">
-            <div class="icon"><i class="icon-check"></i></div>
-            <div class="counterUp">14</div>
-            <p>Project Done</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="0.9s">
-            <div class="icon"><i class="icon-diamond"></i></div>
-            <div class="counterUp">1</div>
-            <p>Awards Received</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-          <div class="counter wow fadeInDown" data-wow-delay="1.2s">
-            <div class="icon"><i class="icon-heart"></i></div>
-            <div class="counterUp">8</div>
-            <p>Happy Clients</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- Counter Area End-->
-
-  <!-- Contact Section Start -->
-  <section id="contact" class="section-padding">
-    <div class="contact-form">
-      <div class="container">
-        <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">
-          <div class="col-md-6 col-lg-6 col-sm-12">
-            <div class="contact-block">
-              <h2>Contact Form</h2>
-              <form id="contactForm">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required
-                        data-error="Please enter your name">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" placeholder="Email" id="email" class="form-control" name="email" required
-                        data-error="Please enter your email">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" placeholder="Subject" id="msg_subject" class="form-control" required
-                        data-error="Please enter your subject">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <textarea class="form-control" id="message" placeholder="Your Message" rows="5"
-                        data-error="Write your message" required></textarea>
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="submit-button">
-                      <button class="btn btn-common" id="submit" type="submit">Send Message</button>
-                      <div id="msgSubmit" class="h3 text-center hidden"></div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-sm-12">
-            <div class="footer-right-area wow fadeIn">
-              <h2>Contact Address</h2>
-              <div class="footer-right-contact">
-                <div class="single-contact">
-                  <div class="contact-icon">
-                    <i class="fa fa-map-marker"></i>
-                  </div>
-                  <p>San Joaquin, Pasig City, Philippines</p>
-                </div>
-                <div class="single-contact">
-                  <div class="contact-icon">
-                    <i class="fa fa-envelope"></i>
-                  </div>
-                  <p><a href="mailto:stevenfrancisreyes@gmail.com">stevenfrancisreyes@gmail.com</a></p>
-                </div>
-                <div class="single-contact">
-                  <div class="contact-icon">
-                    <i class="fa fa-phone"></i>
-                  </div>
-                  <p><a href="#">+ (63) 906 274 6416</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="col-md-12">
-            <object style="border:0; height: 450px; width: 100%;"
-              data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34015.943594576835!2d-106.43242624069771!3d31.677719472407432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d90e99d597b%3A0x6cd3eb9a9fcd23f1!2sCourtyard+by+Marriott+Ciudad+Juarez!5e0!3m2!1sen!2sbd!4v1533791187584"></object>
-          </div> -->
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Contact Section End -->
-
-  <!-- Footer Section Start -->
-  <footer class="footer-area section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
-            <ul class="social-icon">
-              <li>
-                <a class="facebook" href="https://www.facebook.com/stevenfrancis.reyes"><i
-                    class="icon-social-facebook"></i></a>
-              </li>
-              <li>
-                <a class="github" href="https://github.com/steven0529"><i class="icon-social-github"></i></a>
-              </li>
-              <li>
-                <a class="stackexchange" href="https://stackoverflow.com/users/2873772/steven0529"><i
-                    class="lni-stackoverflow"></i></a>
-              </li>
-              <li>
-                <a class="linkedin" href="https://www.linkedin.com/in/steven-francis-reyes-58a92790/"><i
-                    class="icon-social-linkedin"></i></a>
-              </li>
-              <li>
-                <a class="google" href="https://plus.google.com/u/0/114494024657980843354"><i
-                    class="icon-social-google"></i></a>
-              </li>
-            </ul>
-            <p>Copyright © 2018 UIdeck All Right Reserved</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer Section End -->
-
-  <!-- Go to Top Link -->
-  <a href="#" class="back-to-top">
-    <i class="icon-arrow-up"></i>
-  </a>
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="assets/js/jquery-min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/jquery.mixitup.js"></script>
-  <script src="assets/js/jquery.counterup.min.js"></script>
-  <script src="assets/js/waypoints.min.js"></script>
-  <script src="assets/js/wow.js"></script>
-  <script src="assets/js/jquery.nav.js"></script>
-  <script src="assets/js/jquery.easing.min.js"></script>
-  <script src="assets/js/nivo-lightbox.js"></script>
-  <script src="assets/js/jquery.slicknav.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/form-validator.min.js"></script>
-  <script src="assets/js/contact-form-script.min.js"></script>
-  <script src="assets/js/map.js"></script>
-
-</body>
-
-</html>
+          // See more: collapse image and expand text without resizing card
+          (function(){
+            var grid = document.getElementById('projects-grid');
+            if(!grid) return;
+            grid.addEventListener('click', function(e){
+              var btn = e.target.closest('.see-more');
+              if(!btn) return;
+              var card = btn.closest('.project');
+              if(!card) return;
+              var expanded = card.classList.contains('expanded');
+              if(!expanded){
+                card.classList.add('expanded');
+                btn.textContent = 'See less';
+              } else {
+                card.classList.remove('expanded');
+                btn.textContent = 'See more';
+              }
+            });
+          })();
+        })();
+      </script>
+    </footer>
+  </body>
+  </html>
